@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKCasinoGuide — Oklahoma's #1 Casino Resource</title>
+  <meta name="description" content="Oklahoma's #1 tribal casino guide. Find casinos near you, compare rewards clubs, and plan your perfect trip — free, no sign-up. 140+ casinos covered.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="OKCasinoGuide — Oklahoma's #1 Casino Resource">
+  <meta property="og:description" content="Find every tribal casino in Oklahoma. Compare rewards clubs, read guides, and plan your perfect casino trip.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.okcasinoguide.com/">
+  <meta name="theme-color" content="#080808">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Texas Banner ── */
+    .tx-banner {
+      background: linear-gradient(90deg, #0f0a00 0%, #1a1000 40%, #0f0a00 100%);
+      border-bottom: 1px solid rgba(212,168,67,0.3);
+      padding: 10px 20px;
+      text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--tmid);
+    }
+    .tx-banner strong { color: var(--gold); }
+    .tx-banner a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(212,168,67,0.35); padding-bottom: 1px; }
+    .tx-banner a:hover { color: var(--gl); border-color: var(--gl); }
+
+    /* ── Texas CTA Strip ── */
+    .tx-strip {
+      background: #0d0900;
+      border-top: 1px solid rgba(212,168,67,0.15);
+      border-bottom: 1px solid rgba(212,168,67,0.15);
+      padding: 18px 20px;
+    }
+    .tx-strip-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .tx-strip-txt {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--tmid);
+    }
+    .tx-strip-txt strong { color: var(--text); font-size: 15px; }
+    .tx-city-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tx-city-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212,168,67,0.25);
+      padding: 6px 12px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .tx-city-btn:hover { background: rgba(212,168,67,0.08); border-color: var(--gold); }
+
+    /* ── Plan Your Trip Affiliate Section ── */
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+      margin-top: 32px;
+    }
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid rgba(212,168,67,0.12);
+      padding: 28px 24px;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .plan-card:hover { background: #131313; border-color: rgba(212,168,67,0.3); }
+    .plan-card:hover::before { transform: scaleX(1); }
+    .plan-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+    .plan-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .plan-desc {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      color: var(--tmid);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .plan-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .plan-link:hover { color: var(--gl); }
+    .plan-badge {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #080808;
+      background: var(--gold);
+      padding: 3px 8px;
+      margin-bottom: 14px;
+    }
+
+    /* ── Sweepstakes Section ── */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .sw-card {
+      background: var(--s2);
+      border: 1px solid rgba(212,168,67,0.12);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .sw-card:hover { border-color: rgba(212,168,67,0.35); background: var(--s3); }
+    .sw-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .sw-bonus {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .sw-btn {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #080808;
+      background: var(--gold);
+      padding: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .sw-btn:hover { background: var(--gl); }
+    .sw-legal {
+      font-family: 'Barlow', sans-serif;
+      font-size: 11px;
+      color: var(--tdim);
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── Concerts Module ── */
+    .concert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 28px;
+    }
+    .concert-card {
+      background: var(--surface);
+      border: 1px solid rgba(212,168,67,0.12);
+      padding: 22px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .concert-card:hover { border-color: rgba(212,168,67,0.3); }
+    .concert-date {
+      flex-shrink: 0;
+      text-align: center;
+      background: var(--s3);
+      padding: 10px 14px;
+      min-width: 52px;
+    }
+    .concert-month {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .concert-day {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--text);
+    }
+    .concert-info { flex: 1; }
+    .concert-artist {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .concert-venue {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .concert-detail {
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      color: var(--tdim);
+      margin-bottom: 12px;
+    }
+    .concert-cta {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #080808;
+      background: var(--gold);
+      padding: 7px 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .concert-cta:hover { background: var(--gl); }
+    .concerts-footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212,168,67,0.1);
+    }
+
+    /* ── Hotel Booking Strip ── */
+    .hotel-strip {
+      background: linear-gradient(135deg, #0d0900 0%, #100c00 100%);
+      border: 1px solid rgba(212,168,67,0.2);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .hotel-strip-txt { flex: 1; min-width: 200px; }
+    .hotel-strip-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .hotel-strip-sub {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      color: var(--tmid);
+    }
+    .hotel-strip-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ── Comparison Callout ── */
+    .compare-callout {
+      background: var(--s2);
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .compare-callout-txt {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      color: var(--tmid);
+    }
+    .compare-callout-txt strong { color: var(--text); }
+
+    /* ── Revenue Highlight on Casino Cards ── */
+    .cc-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .cc-hotel-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--tmid);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 10px;
+      text-decoration: none;
+      transition: all 0.2s;
+      flex: 1;
+      text-align: center;
+    }
+    .cc-hotel-link:hover { color: var(--gold); border-color: rgba(212,168,67,0.3); }
+
+    /* ── Stat highlight bar ── */
+    .highlight-bar {
+      background: var(--gdim);
+      border: 1px solid var(--gbr);
+      padding: 16px 24px;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .hb-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hb-item::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    /* ── Mobile overrides ── */
+    @media (max-width: 600px) {
+      .tx-strip-inner { flex-direction: column; align-items: flex-start; }
+      .hotel-strip { flex-direction: column; }
+      .concert-card { flex-direction: column; }
+      .plan-grid { grid-template-columns: 1fr; gap: 1px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ TEXAS BANNER (NEW) ══════════════ -->
+<div class="tx-banner">
+  <strong>Driving from Texas?</strong> &nbsp;WinStar is 75 miles from Dallas · Choctaw is 95 miles · <a href="casinos-near-dallas.html">See all options →</a>
+</div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="logo" aria-label="OKCasinoGuide home">OK<em>Casino</em>Guide</a>
+  <ul class="nav-links" role="list">
+    <li><a href="casinos-near-dallas.html">Near Dallas</a></li>
+    <li><a href="casinos.html">All Casinos</a></li>
+    <li><a href="compare-choctaw-vs-winstar.html">Compare</a></li>
+    <li><a href="#concerts">Concerts</a></li>
+    <li><a href="#rewards">Rewards</a></li>
+    <li><a href="#beginners">Beginner's Guide</a></li>
+    <li><a href="regions.html">By Region</a></li>
+    <li><a href="casinos-near-dallas.html" class="btn-nav">Casinos Near Me →</a></li>
+  </ul>
+  <button class="hbg" id="hbg" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div id="mob" aria-label="Mobile navigation">
+  <a href="casinos-near-dallas.html">🤠&nbsp; Casinos Near Dallas</a>
+  <a href="casinos.html">🎰&nbsp; All Oklahoma Casinos</a>
+  <a href="compare-choctaw-vs-winstar.html">⚖️&nbsp; Compare Casinos</a>
+  <a href="#concerts">🎵&nbsp; Upcoming Concerts</a>
+  <a href="#rewards">⭐&nbsp; Rewards Clubs</a>
+  <a href="#beginners">🃏&nbsp; Beginner's Guide</a>
+  <a href="regions.html">📍&nbsp; By Region</a>
+  <a href="sweepstakes-casinos-oklahoma.html">🎮&nbsp; Play Free Online</a>
+  <a href="casinos-near-dallas.html" class="mcta">Find Casinos Near Me →</a>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="btt" aria-label="Back to top">↑</button>
+
+<!-- ══════════════ 1. HERO ══════════════ -->
+<section class="hero" id="top" aria-label="Hero">
+  <div class="hgrid" aria-hidden="true"></div>
+  <div class="hglow" aria-hidden="true"></div>
+  <div class="hglow2" aria-hidden="true"></div>
+
+  <svg class="hmap" viewBox="0 0 700 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M 20,130 L 20,60 L 215,60 L 215,130 L 675,130 L 675,310 L 630,310 L 628,322 L 614,328 L 600,320 L 586,326 L 572,318 L 558,324 L 544,315 L 20,315 Z"
+      stroke="rgba(212,168,67,0.5)" stroke-width="1.5" stroke-linejoin="round" fill="rgba(212,168,67,0.03)"/>
+  </svg>
+
+  <div class="hbody">
+    <div class="badge" role="status">
+      <div class="bdot" aria-hidden="true"></div>
+      <span class="badge-txt">Updated Weekly · 140+ Casinos Covered</span>
+    </div>
+    <h1 class="hh">Oklahoma's<br><span class="g">Casino Guide</span></h1>
+    <p class="hsub">Find every tribal casino in the state, compare rewards clubs, and plan your perfect trip — whether you're a local or <strong>driving in from Texas, Arkansas, Kansas, or Missouri.</strong></p>
+    <div class="hbtns">
+      <a href="casinos-near-dallas.html" class="bp">🤠 Casinos Near Dallas</a>
+      <a href="compare-choctaw-vs-winstar.html" class="bs">Choctaw vs WinStar →</a>
+    </div>
+    <div class="hdiv" aria-hidden="true"></div>
+    <div class="stats" role="list" aria-label="Oklahoma casino statistics">
+      <div role="listitem"><div class="sn">140+</div><div class="sl">Tribal Casinos</div></div>
+      <div role="listitem"><div class="sn">30M</div><div class="sl">Texas Visitors</div></div>
+      <div role="listitem"><div class="sn">#2</div><div class="sl">Most in US</div></div>
+      <div role="listitem"><div class="sn">75mi</div><div class="sl">Dallas to WinStar</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TEXAS CITY STRIP (NEW — replaces ticker) ══════════════ -->
+<div class="tx-strip">
+  <div class="tx-strip-inner">
+    <div class="tx-strip-txt">
+      <strong>Find casinos near your city</strong><br>
+      Pick your starting point for personalized recommendations
+    </div>
+    <div class="tx-city-row">
+      <a href="casinos-near-dallas.html" class="tx-city-btn">Dallas</a>
+      <a href="casinos-near-fort-worth.html" class="tx-city-btn">Fort Worth</a>
+      <a href="casinos-near-houston.html" class="tx-city-btn">Houston</a>
+      <a href="casinos-near-san-antonio.html" class="tx-city-btn">San Antonio</a>
+      <a href="casinos-near-oklahoma-city.html" class="tx-city-btn">OKC</a>
+      <a href="casinos-near-tulsa.html" class="tx-city-btn">Tulsa</a>
+      <a href="casinos-near-wichita.html" class="tx-city-btn">Wichita</a>
+      <a href="casinos-near-fort-smith.html" class="tx-city-btn">Fort Smith</a>
+    </div>
+  </div>
+</div>
+
+<!-- ADSENSE UNIT -->
+<div class="ad-unit">ADVERTISEMENT</div>
+
+<!-- ══════════════ 2. TOP CASINOS ══════════════ -->
+<section class="sec dk" id="casinos">
+  <div class="sh rv">
+    <div class="lbl">Top Rated</div>
+    <h2 class="stitle">Oklahoma's Best Casinos</h2>
+    <p class="ssub">Our most complete casino guides — with hotels, concerts, and trip planning links for each property.</p>
+  </div>
+  <div class="cgrid">
+    <div class="cc rv">
+      <div class="ctop"><div class="crank">01</div><div class="cbadge">⭐ 4.8</div></div>
+      <div class="cname">Choctaw Casino Resort</div>
+      <div class="cloc">📍 Durant, OK · ~1hr 20min North of Dallas</div>
+      <div class="ctags">
+        <span class="tag g">AAA Four Diamond</span>
+        <span class="tag">7,400+ Slots</span>
+        <span class="tag">1,600+ Rooms</span>
+        <span class="tag">20 Restaurants</span>
+        <span class="tag new">Crypto Accepted</span>
+      </div>
+      <a href="casino-choctaw-durant.html" class="clink">Full Guide →</a>
+      <div class="cc-actions">
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="Book hotel at Choctaw">🏨 Book Hotel</a>
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="See concerts at Choctaw">🎵 Concerts</a>
+      </div>
+    </div>
+    <div class="cc rv2">
+      <div class="ctop"><div class="crank">02</div><div class="cbadge">⭐ 4.7</div></div>
+      <div class="cname">WinStar World Casino</div>
+      <div class="cloc">📍 Thackerville, OK · 1hr North of Dallas</div>
+      <div class="ctags">
+        <span class="tag g">World's Largest Casino</span>
+        <span class="tag">10,500+ Electronic Games</span>
+        <span class="tag">1,700+ Rooms</span>
+        <span class="tag">2 Golf Courses</span>
+      </div>
+      <a href="casino-winstar.html" class="clink">Full Guide →</a>
+      <div class="cc-actions">
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="Book hotel at WinStar">🏨 Book Hotel</a>
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="Book golf at WinStar">⛳ Book Golf</a>
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="See concerts at WinStar">🎵 Concerts</a>
+      </div>
+    </div>
+    <div class="cc rv3">
+      <div class="ctop"><div class="crank">03</div><div class="cbadge">⭐ 4.6</div></div>
+      <div class="cname">Hard Rock Casino Tulsa</div>
+      <div class="cloc">📍 Catoosa, OK · 15min East of Tulsa</div>
+      <div class="ctags">
+        <span class="tag g">Live Entertainment</span>
+        <span class="tag">2,600+ Slots</span>
+        <span class="tag">454 Rooms</span>
+        <span class="tag">Poker Room</span>
+        <span class="tag">Golf Course</span>
+      </div>
+      <a href="casino-hard-rock-tulsa.html" class="clink">Full Guide →</a>
+      <div class="cc-actions">
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="Book hotel at Hard Rock">🏨 Book Hotel</a>
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="Book golf at Hard Rock">⛳ Book Golf</a>
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="See concerts at Hard Rock">🎵 Concerts</a>
+      </div>
+    </div>
+    <div class="cc rv">
+      <div class="ctop"><div class="crank">04</div><div class="cbadge">⭐ 4.5</div></div>
+      <div class="cname">Riverwind Casino</div>
+      <div class="cloc">📍 Norman, OK · South of OKC</div>
+      <div class="ctags">
+        <span class="tag g">Best OKC-Area Pick</span>
+        <span class="tag">Table Games</span>
+        <span class="tag">Dining</span>
+        <span class="tag">Live Music</span>
+      </div>
+      <a href="casino-riverwind.html" class="clink">Full Guide →</a>
+      <div class="cc-actions">
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="See concerts at Riverwind">🎵 Concerts</a>
+        <a href="casinos-near-oklahoma-city.html" class="cc-hotel-link">📍 Near OKC Guide</a>
+      </div>
+    </div>
+    <div class="cc rv2">
+      <div class="ctop"><div class="crank">05</div><div class="cbadge">⭐ 4.4</div></div>
+      <div class="cname">Downstream Casino Resort</div>
+      <div class="cloc">📍 Quapaw, OK · OK/KS/MO Border</div>
+      <div class="ctags">
+        <span class="tag g">3-State Border Location</span>
+        <span class="tag">Table Games</span>
+        <span class="tag">Hotel</span>
+        <span class="tag">Concerts</span>
+      </div>
+      <a href="casino-downstream.html" class="clink">Full Guide →</a>
+      <div class="cc-actions">
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="Book hotel at Downstream">🏨 Book Hotel</a>
+        <a href="#affiliate-link-here" class="cc-hotel-link" aria-label="See concerts at Downstream">🎵 Concerts</a>
+      </div>
+    </div>
+    <div class="cc va rv3">
+      <div class="vatxt">View All 140+ Casinos</div>
+      <a href="casinos.html" class="bs" style="font-size:12.5px;">See Full Directory →</a>
+    </div>
+  </div>
+
+  <!-- Hotel Booking Strip -->
+  <div class="hotel-strip rv">
+    <div class="hotel-strip-txt">
+      <div class="hotel-strip-title">Book Your Casino Hotel Tonight</div>
+      <div class="hotel-strip-sub">Compare rates at Choctaw, WinStar, Hard Rock, and Downstream — all in one place.</div>
+    </div>
+    <div class="hotel-strip-btns">
+      <a href="#affiliate-link-here" class="bp" aria-label="Search hotel rates on Booking.com">
+        <!-- AFFILIATE LINK — replace with Booking.com affiliate URL -->
+        Search Hotel Rates →
+      </a>
+      <a href="casino-choctaw-durant.html#hotel" class="bs">Choctaw Resort Info →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 3. QUICK COMPARE ══════════════ -->
+<section class="sec" id="compare">
+  <div class="sh rv">
+    <div class="lbl">Side by Side</div>
+    <h2 class="stitle">Choctaw vs WinStar</h2>
+    <p class="ssub">Oklahoma's two biggest casinos sit less than 40 miles apart on the Texas border. Here's the honest breakdown to help you pick one before making the drive.</p>
+  </div>
+  <div class="qc-wrap rv2">
+    <div class="qc-head">
+      <div class="qc-cell label"></div>
+      <div class="qc-cell casino">🏆 Choctaw Durant</div>
+      <div class="qc-cell casino">WinStar World</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Gaming Machines</div>
+      <div class="qc-cell val">7,400+</div>
+      <div class="qc-cell val qc-win">10,500+</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Hotel Rooms</div>
+      <div class="qc-cell val">1,600+</div>
+      <div class="qc-cell val qc-win">1,700+</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Restaurants</div>
+      <div class="qc-cell val qc-win">20</div>
+      <div class="qc-cell val">20+</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Golf Courses</div>
+      <div class="qc-cell val">None</div>
+      <div class="qc-cell val qc-win">2 Championship</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Hotel Quality</div>
+      <div class="qc-cell val qc-win">AAA Four Diamond</div>
+      <div class="qc-cell val">Upscale Resort</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Crypto Accepted</div>
+      <div class="qc-cell val qc-win">✓ Yes (first in US)</div>
+      <div class="qc-cell val">No</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Concert Venue</div>
+      <div class="qc-cell val qc-win">Grand Theater (3,000 seats)</div>
+      <div class="qc-cell val qc-win">Lucas Oil Live (6,500 seats)</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Family Entertainment</div>
+      <div class="qc-cell val qc-win">The District (bowling, arcade, movies)</div>
+      <div class="qc-cell val">Limited</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Distance from Dallas</div>
+      <div class="qc-cell val">~95 miles / ~1hr 20min</div>
+      <div class="qc-cell val qc-win">~75 miles / ~1hr</div>
+    </div>
+    <div class="qc-row">
+      <div class="qc-cell label">Best For</div>
+      <div class="qc-cell val" style="color:var(--tmid);">Families, hotel stays, dining, non-smoking floor</div>
+      <div class="qc-cell val" style="color:var(--tmid);">Pure gambling, golf, biggest concerts</div>
+    </div>
+  </div>
+  <div class="compare-callout rv3">
+    <div class="compare-callout-txt"><strong>Can't decide?</strong> Read our full 15-minute breakdown — hotel quality, gaming floor details, rewards programs, drive times from every major Texas city.</div>
+    <a href="compare-choctaw-vs-winstar.html" class="bp" style="white-space:nowrap;">Read Full Comparison →</a>
+  </div>
+</section>
+
+<!-- ADSENSE UNIT -->
+<div class="ad-unit">ADVERTISEMENT</div>
+
+<!-- ══════════════ 4. UPCOMING CONCERTS (NEW) ══════════════ -->
+<section class="sec dk" id="concerts">
+  <div class="sh rv">
+    <div class="lbl">Live Entertainment</div>
+    <h2 class="stitle">Upcoming Casino Concerts</h2>
+    <p class="ssub">A show at WinStar or Choctaw is one of the best reasons to make the trip. Browse upcoming events and grab tickets before they sell out.</p>
+  </div>
+
+  <!-- NOTE: Replace these placeholder cards with real events pulled from SeatGeek/Ticketmaster affiliate links -->
+  <div class="concert-grid">
+    <div class="concert-card rv">
+      <div class="concert-date">
+        <div class="concert-month">Apr</div>
+        <div class="concert-day">12</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-artist">Coming Soon</div>
+        <div class="concert-venue">Lucas Oil Live — WinStar World Casino</div>
+        <div class="concert-detail">Thackerville, OK · 75 miles from Dallas</div>
+        <a href="#affiliate-link-here" class="concert-cta" aria-label="Get tickets">
+          <!-- AFFILIATE LINK — replace with SeatGeek affiliate URL -->
+          Get Tickets →
+        </a>
+      </div>
+    </div>
+    <div class="concert-card rv2">
+      <div class="concert-date">
+        <div class="concert-month">Apr</div>
+        <div class="concert-day">19</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-artist">Coming Soon</div>
+        <div class="concert-venue">Grand Theater — Choctaw Casino Durant</div>
+        <div class="concert-detail">Durant, OK · 95 miles from Dallas</div>
+        <a href="#affiliate-link-here" class="concert-cta" aria-label="Get tickets">
+          <!-- AFFILIATE LINK — replace with SeatGeek affiliate URL -->
+          Get Tickets →
+        </a>
+      </div>
+    </div>
+    <div class="concert-card rv3">
+      <div class="concert-date">
+        <div class="concert-month">May</div>
+        <div class="concert-day">03</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-artist">Coming Soon</div>
+        <div class="concert-venue">Hard Rock Live — Hard Rock Tulsa</div>
+        <div class="concert-detail">Catoosa, OK · Near Tulsa</div>
+        <a href="#affiliate-link-here" class="concert-cta" aria-label="Get tickets">
+          <!-- AFFILIATE LINK — replace with SeatGeek affiliate URL -->
+          Get Tickets →
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="concerts-footer rv">
+    <a href="#affiliate-link-here" class="bp">
+      <!-- AFFILIATE LINK — replace with SeatGeek all-events affiliate URL -->
+      See All Oklahoma Casino Events →
+    </a>
+    <p style="font-family:Barlow,sans-serif;font-size:12px;color:var(--tdim);margin-top:12px;">Powered by SeatGeek. We may earn a commission on ticket sales at no cost to you.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 5. PLAN YOUR TRIP (NEW AFFILIATE HUB) ══════════════ -->
+<section class="sec" id="plan">
+  <div class="sh rv">
+    <div class="lbl">Trip Planning</div>
+    <h2 class="stitle">Everything You Need<br>For Your Casino Trip</h2>
+    <p class="ssub">Book your hotel, grab concert tickets, reserve a tee time, or play for free online — all in one place.</p>
+  </div>
+  <div class="plan-grid">
+    <div class="plan-card rv">
+      <div class="plan-badge">Booking.com Partner</div>
+      <span class="plan-icon" aria-hidden="true">🏨</span>
+      <div class="plan-title">Book Your Hotel</div>
+      <div class="plan-desc">Compare rates at Choctaw, WinStar, Hard Rock, and Downstream. AAA Four Diamond rooms at Choctaw start from $109/night on weekdays.</div>
+      <a href="#affiliate-link-here" class="plan-link" aria-label="Search hotel rates">
+        <!-- AFFILIATE LINK — replace with Booking.com affiliate URL -->
+        Search Rates →
+      </a>
+    </div>
+    <div class="plan-card rv2">
+      <div class="plan-badge">SeatGeek Partner</div>
+      <span class="plan-icon" aria-hidden="true">🎵</span>
+      <div class="plan-title">Get Concert Tickets</div>
+      <div class="plan-desc">WinStar's Lucas Oil Live holds 6,500 people. Choctaw's Grand Theater holds 3,000. Both book major country, rock, and hip-hop acts year-round.</div>
+      <a href="#affiliate-link-here" class="plan-link" aria-label="Browse concert tickets">
+        <!-- AFFILIATE LINK — replace with SeatGeek affiliate URL -->
+        Browse Events →
+      </a>
+    </div>
+    <div class="plan-card rv3">
+      <div class="plan-badge">GolfNow Partner</div>
+      <span class="plan-icon" aria-hidden="true">⛳</span>
+      <div class="plan-title">Book a Tee Time</div>
+      <div class="plan-desc">WinStar has two championship 18-hole courses. Hard Rock Tulsa has its own course too. Book tee times same-day or in advance through GolfNow.</div>
+      <a href="#affiliate-link-here" class="plan-link" aria-label="Book golf tee time">
+        <!-- AFFILIATE LINK — replace with GolfNow affiliate URL -->
+        Check Tee Times →
+      </a>
+    </div>
+    <div class="plan-card rv">
+      <span class="plan-icon" aria-hidden="true">⭐</span>
+      <div class="plan-title">Join Rewards Free</div>
+      <div class="plan-desc">Sign up for Choctaw Rewards or WinStar's program before you play a single dollar. Every bet earns points toward free play, hotel stays, and dining credits.</div>
+      <a href="casino-choctaw-durant.html#rewards" class="plan-link" aria-label="Learn about rewards programs">
+        Learn How →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 6. SWEEPSTAKES (NEW AFFILIATE SECTION) ══════════════ -->
+<section class="sec dk" id="sweepstakes">
+  <div class="sh rv">
+    <div class="lbl">Play Free Online</div>
+    <h2 class="stitle">Can't Make the Drive?<br>Play Sweepstakes Casinos</h2>
+    <p class="ssub">These are <strong>free-to-play online platforms</strong> — not real-money casinos. Legal in Texas and most US states. No deposit required to start.</p>
+  </div>
+  <div class="sw-grid rv2">
+    <div class="sw-card">
+      <div class="sw-name">Pulsz</div>
+      <div class="sw-bonus">Free SC on Signup</div>
+      <a href="#affiliate-link-here" class="sw-btn" aria-label="Play Pulsz free">
+        <!-- AFFILIATE LINK — $50–200 per signup -->
+        Play Free →
+      </a>
+    </div>
+    <div class="sw-card">
+      <div class="sw-name">High 5 Casino</div>
+      <div class="sw-bonus">Free Coins + Spins</div>
+      <a href="#affiliate-link-here" class="sw-btn" aria-label="Play High 5 Casino free">
+        <!-- AFFILIATE LINK — $50–200 per signup -->
+        Play Free →
+      </a>
+    </div>
+    <div class="sw-card">
+      <div class="sw-name">McLuck</div>
+      <div class="sw-bonus">Welcome Bonus</div>
+      <a href="#affiliate-link-here" class="sw-btn" aria-label="Play McLuck free">
+        <!-- AFFILIATE LINK — $50–200 per signup -->
+        Play Free →
+      </a>
+    </div>
+    <div class="sw-card">
+      <div class="sw-name">Wow Vegas</div>
+      <div class="sw-bonus">Free SC on Signup</div>
+      <a href="#affiliate-link-here" class="sw-btn" aria-label="Play Wow Vegas free">
+        <!-- AFFILIATE LINK — $50–200 per signup -->
+        Play Free →
+      </a>
+    </div>
+    <div class="sw-card">
+      <div class="sw-name">Sweeps Coins</div>
+      <div class="sw-bonus">Bonus on First Play</div>
+      <a href="#affiliate-link-here" class="sw-btn" aria-label="Play Sweeps Coins free">
+        <!-- AFFILIATE LINK — $50–200 per signup -->
+        Play Free →
+      </a>
+    </div>
+  </div>
+  <p class="sw-legal rv3">⚠️ These are free-to-play sweepstakes platforms — not real-money gambling sites. No purchase necessary to play or win. Must be 18+. Available in most US states including Texas. We may earn a commission if you sign up through our links.</p>
+  <div style="text-align:center;margin-top:20px;" class="rv">
+    <a href="sweepstakes-casinos-oklahoma.html" class="bs">Full Sweepstakes Casino Guide →</a>
+  </div>
+</section>
+
+<!-- ADSENSE UNIT -->
+<div class="ad-unit">ADVERTISEMENT</div>
+
+<!-- ══════════════ 7. VISITOR STATES ══════════════ -->
+<section class="sec" id="visitors">
+  <div class="sh rv">
+    <div class="lbl">Out-of-State Visitors</div>
+    <h2 class="stitle">Oklahoma Draws Millions<br>From Four Neighboring States</h2>
+    <p class="ssub">No casinos where you live? Oklahoma has 140+. Find the ones closest to where you're coming from.</p>
+  </div>
+  <div class="vs-grid">
+    <div class="vs-card rv">
+      <span class="vs-flag">🤠</span>
+      <div class="vs-state">Texas</div>
+      <div class="vs-pop">30 Million People · Zero Casinos</div>
+      <div class="vs-desc">The biggest feeder state by far. WinStar and Choctaw Durant are both right on the border — under 90 minutes from Dallas. Texans spend an estimated $2.5–3 billion at Oklahoma casinos each year.</div>
+      <div class="vs-count">8+ Casinos Within 2hrs of Dallas</div>
+      <a href="casinos-near-dallas.html" class="clink" style="margin-top:12px;display:inline-block;">Dallas Guide →</a>
+    </div>
+    <div class="vs-card rv2">
+      <span class="vs-flag">🌲</span>
+      <div class="vs-state">Arkansas</div>
+      <div class="vs-pop">3 Million People · Very Limited Options</div>
+      <div class="vs-desc">Arkansas has only a handful of casinos. Eastern Oklahoma is a short drive with a dramatically better selection — Cherokee Casino and Choctaw Pocola are both near the state line.</div>
+      <div class="vs-count">6+ Casinos Within 1hr of Ft. Smith</div>
+      <a href="casinos-near-fort-smith.html" class="clink" style="margin-top:12px;display:inline-block;">Fort Smith Guide →</a>
+    </div>
+    <div class="vs-card rv3">
+      <span class="vs-flag">🌾</span>
+      <div class="vs-state">Kansas</div>
+      <div class="vs-pop">2.9 Million People · Few Options</div>
+      <div class="vs-desc">Kansas has some tribal casinos but nowhere near Oklahoma's selection. Northern Oklahoma properties like Downstream and First Council Casino sit right on the Kansas border.</div>
+      <div class="vs-count">4+ Casinos Within 1hr of Wichita</div>
+      <a href="casinos-near-wichita.html" class="clink" style="margin-top:12px;display:inline-block;">Wichita Guide →</a>
+    </div>
+    <div class="vs-card rv">
+      <span class="vs-flag">🏛️</span>
+      <div class="vs-state">Missouri</div>
+      <div class="vs-pop">6 Million People · Limited Tribal Options</div>
+      <div class="vs-desc">Downstream Casino Resort sits exactly at the corner where Oklahoma, Kansas, and Missouri meet — one of the most accessible border casinos in the entire country for Missouri residents.</div>
+      <div class="vs-count">Downstream is ~3hrs from St. Louis</div>
+      <a href="casinos-near-kansas-city.html" class="clink" style="margin-top:12px;display:inline-block;">Kansas City Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 8. BEGINNERS ══════════════ -->
+<section class="sec dk" id="beginners">
+  <div class="sh rv">
+    <div class="lbl">First Time?</div>
+    <h2 class="stitle">Never Been to a Casino?<br>Start Here.</h2>
+    <p class="ssub">No jargon, no judgment. Plain answers to every question first-timers actually have before walking through the door.</p>
+  </div>
+  <div class="beg-grid">
+    <div class="bc rv">
+      <div class="bn" aria-hidden="true">01</div>
+      <span class="bi" aria-hidden="true">🏛️</span>
+      <div class="bt">How Tribal Casinos Work</div>
+      <div class="bd">Oklahoma's casinos are owned by Native American tribes under federal law. Here's exactly what that means when you walk in — what's different from Las Vegas and what's the same.</div>
+      <a href="best-casino-oklahoma-beginners.html" class="bc-link">Read Guide →</a>
+    </div>
+    <div class="bc rv2">
+      <div class="bn" aria-hidden="true">02</div>
+      <span class="bi" aria-hidden="true">🎰</span>
+      <div class="bt">What Games Can I Play?</div>
+      <div class="bd">Slots, blackjack, poker, roulette — a plain-English breakdown of every game you'll find on an Oklahoma casino floor and exactly how each one works before you sit down.</div>
+      <a href="best-casino-oklahoma-slots.html" class="bc-link">Read Guide →</a>
+    </div>
+    <div class="bc rv3">
+      <div class="bn" aria-hidden="true">03</div>
+      <span class="bi" aria-hidden="true">⭐</span>
+      <div class="bt">How Rewards Clubs Work</div>
+      <div class="bd">Every casino has a free rewards program — sign up before your first dollar. You earn points on every dollar spent that convert to free play, hotel stays, and dining credits.</div>
+      <a href="#rewards" class="bc-link">Read Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 9. REWARDS ══════════════ -->
+<section class="sec" id="rewards">
+  <div class="sh rv">
+    <div class="lbl">Rewards Programs</div>
+    <h2 class="stitle">Make Every Visit Count</h2>
+    <p class="ssub">Oklahoma's biggest casinos have some of the best loyalty programs in the country. Here's what you're leaving on the table if you're not signed up before you play.</p>
+  </div>
+  <div class="rew-grid">
+    <div class="rew-card rv">
+      <div class="rew-tier gold-tier">Newsweek 2026 Pick</div>
+      <div class="rew-name">Choctaw Rewards Club</div>
+      <div class="rew-casino">Choctaw Casinos &amp; Resorts · All 8 Oklahoma Locations</div>
+      <div class="rew-tiers" aria-label="Reward tier levels">
+        <div class="rt">Ruby</div>
+        <div class="rt">Amber</div>
+        <div class="rt">Sapphire</div>
+        <div class="rt">Royal</div>
+        <div class="rt active">Onyx ★</div>
+      </div>
+      <div class="rew-perks">
+        <div class="rew-perk">Earn points on slots, table games, poker, hotel stays, dining and retail</div>
+        <div class="rew-perk">Points redeem as free play — 1,000 points = $1 in free slot play</div>
+        <div class="rew-perk">Five tiers from Ruby (entry) to Onyx (top tier at 400,000 credits)</div>
+        <div class="rew-perk">Monthly cash drawings and free play promotions for all members</div>
+        <div class="rew-perk">Recognized by Newsweek as one of the Best Casino Players Clubs of 2026</div>
+      </div>
+      <a href="casino-choctaw-durant.html#rewards" class="clink">Full Rewards Guide →</a>
+    </div>
+    <div class="rew-card rv2">
+      <div class="rew-tier silver-tier">Popular Pick</div>
+      <div class="rew-name">WinStar World Rewards</div>
+      <div class="rew-casino">WinStar World Casino &amp; Resort · Thackerville, OK</div>
+      <div class="rew-tiers" aria-label="Reward tier levels">
+        <div class="rt">Club</div>
+        <div class="rt">Silver</div>
+        <div class="rt">Gold</div>
+        <div class="rt">Platinum</div>
+        <div class="rt active">Diamond ★</div>
+      </div>
+      <div class="rew-perks">
+        <div class="rew-perk">World's largest casino floor — one of the biggest rewards programs in the US</div>
+        <div class="rew-perk">Earn points across gaming, dining, hotel stays and both golf courses</div>
+        <div class="rew-perk">Five tiers from Club to Diamond with increasing benefits at each level</div>
+        <div class="rew-perk">Exclusive member-only tournaments, drawings and promotional events</div>
+        <div class="rew-perk">First-day membership earns up to $100 in rewards play</div>
+      </div>
+      <a href="casino-winstar.html#rewards" class="clink">Full Rewards Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 10. TRIP PLANNER ══════════════ -->
+<section class="sec dk" id="planner">
+  <div class="sh rv">
+    <div class="lbl">Plan Your Visit</div>
+    <h2 class="stitle">Trip Planner</h2>
+    <p class="ssub">Answer three quick questions and we'll match you with the best Oklahoma casino for your trip.</p>
+  </div>
+  <div class="tp-steps rv2">
+    <div class="tp-step">
+      <div class="tp-step-num">01</div>
+      <div class="tp-step-title">Where Are You Coming From?</div>
+      <select class="tp-select" id="tpCity">
+        <option value="">Select a city...</option>
+        <option value="dallas">Dallas, TX</option>
+        <option value="fortworth">Fort Worth, TX</option>
+        <option value="houston">Houston, TX</option>
+        <option value="sanantonio">San Antonio, TX</option>
+        <option value="okc">Oklahoma City, OK</option>
+        <option value="tulsa">Tulsa, OK</option>
+        <option value="wichita">Wichita, KS</option>
+        <option value="kansascity">Kansas City, MO</option>
+        <option value="fortsmith">Fort Smith, AR</option>
+        <option value="fayetteville">Fayetteville, AR</option>
+      </select>
+    </div>
+    <div class="tp-step">
+      <div class="tp-step-num">02</div>
+      <div class="tp-step-title">What Are You Looking For?</div>
+      <div class="tp-checks">
+        <label class="tp-check"><input type="checkbox" value="slots"> Slots</label>
+        <label class="tp-check"><input type="checkbox" value="tables"> Table Games</label>
+        <label class="tp-check"><input type="checkbox" value="poker"> Poker</label>
+        <label class="tp-check"><input type="checkbox" value="golf"> Golf</label>
+        <label class="tp-check"><input type="checkbox" value="concerts"> Concerts</label>
+        <label class="tp-check"><input type="checkbox" value="hotel"> Hotel Stay</label>
+        <label class="tp-check"><input type="checkbox" value="family"> Family Friendly</label>
+        <label class="tp-check"><input type="checkbox" value="daytrip"> Day Trip Only</label>
+      </div>
+    </div>
+    <div class="tp-step">
+      <div class="tp-step-num">03</div>
+      <div class="tp-step-title">What's Your Budget?</div>
+      <div class="tp-radios">
+        <label class="tp-radio"><input type="radio" name="tpBudget" value="low"> Under $100</label>
+        <label class="tp-radio"><input type="radio" name="tpBudget" value="mid"> $100–$300</label>
+        <label class="tp-radio"><input type="radio" name="tpBudget" value="high"> $300–$500</label>
+        <label class="tp-radio"><input type="radio" name="tpBudget" value="premium"> $500+</label>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:20px;text-align:center;" class="rv3">
+    <button class="bp" id="tpFind">🎯 Find My Casino</button>
+  </div>
+  <div class="tp-results" id="tpResults"></div>
+</section>
+
+<!-- ADSENSE UNIT -->
+<div class="ad-unit">ADVERTISEMENT</div>
+
+<!-- ══════════════ 11. NEWS ══════════════ -->
+<section class="sec" id="news">
+  <div class="sh rv">
+    <div class="lbl">News &amp; Updates</div>
+    <h2 class="stitle">What's Happening in<br>Oklahoma Casinos</h2>
+    <p class="ssub">Latest news, promotions, and updates from Oklahoma's tribal casino scene — updated regularly.</p>
+  </div>
+  <div class="news-grid">
+    <a href="compare-choctaw-vs-winstar.html" class="nm rv">
+      <div class="ncat">Featured Guide</div>
+      <div class="ntitle">Choctaw Durant vs WinStar: Which Giant Is Right For Your Trip?</div>
+      <div class="nexc">Both are world-class resorts less than 40 miles apart on the Texas border — but they offer very different experiences. We break down gaming floors, hotels, dining, rewards and drive times so you don't waste a trip choosing the wrong one.</div>
+      <div class="nmeta">
+        <span>⏱ 15 min read</span>
+        <span class="sep">·</span>
+        <span>📅 March 2026</span>
+        <span class="sep">·</span>
+        <span>⭐ Most Read</span>
+      </div>
+    </a>
+    <div class="nside">
+      <a href="casino-choctaw-durant.html#crypto" class="ni rv">
+        <div class="ncat">News</div>
+        <div class="ntitle">Choctaw Now Accepts Crypto at the Cage</div>
+        <div class="nexc">First brick-and-mortar casino in the US to accept Bitcoin, Ethereum, and more directly for chips — live since March 2025.</div>
+        <div class="nmeta"><span>4 min read</span><span class="sep">·</span><span>Mar 2025</span></div>
+      </a>
+      <a href="casino-choctaw-durant.html#rewards" class="ni rv2">
+        <div class="ncat">Rewards Guide</div>
+        <div class="ntitle">Choctaw Rewards Club: The Complete 2026 Guide</div>
+        <div class="nexc">Tier levels, how to earn faster, and the perks most members never use — straight from the source.</div>
+        <div class="nmeta"><span>8 min read</span></div>
+      </a>
+      <a href="about.html" class="ni rv3">
+        <div class="ncat">Sports Betting</div>
+        <div class="ntitle">Oklahoma Sports Betting — Where Things Stand in 2026</div>
+        <div class="nexc">Bills keep stalling. Here's the honest current status and what to realistically expect this year.</div>
+        <div class="nmeta"><span>5 min read</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 12. NEWSLETTER ══════════════ -->
+<section class="sec dk" id="newsletter">
+  <div class="sh rv">
+    <div class="lbl">Stay Updated</div>
+    <h2 class="stitle">Get the Weekly Oklahoma Casino Update</h2>
+    <p class="ssub">New promotions, upcoming concerts, rewards tips, and casino news — every Tuesday. Free.</p>
+  </div>
+  <div class="nl-wrap rv2">
+    <form class="nl-form" action="#mailchimp-form-action-here" method="POST">
+      <input type="email" name="email" placeholder="Your email address..." required aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="nl-small">No spam. Unsubscribe anytime. We'll notify you of upcoming concerts and casino promotions.</p>
+  </div>
+</section>
+
+<!-- ══════════════ AGE GATE ══════════════ -->
+<div class="age-bar" role="complementary" aria-label="Age requirement notice">
+  <p>🔞 <strong>Must be 18 or 21 to enter</strong> — age requirements vary by casino. Always check with your specific property before visiting. Play responsibly.</p>
+</div>
+
+<!-- ══════════════ RESPONSIBLE GAMBLING ══════════════ -->
+<div class="resp" role="complementary" aria-label="Responsible gambling information">
+  <div class="rl">
+    <div class="ri" aria-hidden="true">🛡️</div>
+    <div class="rtxt">
+      <strong>Play Responsibly</strong>
+      <p>Gambling should always be entertainment — never a way to make money. If you or someone you know needs help, free and confidential support is available 24/7. Call the National Problem Gambling Helpline: 1-800-522-4700.</p>
+    </div>
+  </div>
+  <a href="https://www.ncpgambling.org/" target="_blank" rel="noopener noreferrer" class="ra">Get Help →</a>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="fg">
+    <div>
+      <div class="flogo">OK<em>Casino</em>Guide</div>
+      <p class="fdesc">Oklahoma's most complete tribal casino guide. Find casinos near you, compare rewards programs, and plan your trip — completely free, no sign up required.</p>
+      <div class="fsoc">
+        <a class="so" href="#affiliate-link-here" title="Facebook" aria-label="Facebook">f</a>
+        <a class="so" href="#affiliate-link-here" title="X / Twitter" aria-label="X / Twitter">𝕏</a>
+        <a class="so" href="#affiliate-link-here" title="Instagram" aria-label="Instagram">◎</a>
+      </div>
+      <div class="nl-footer">
+        <form class="nl-form" action="#mailchimp-form-action-here" method="POST">
+          <input type="email" name="email" placeholder="Email for updates..." required aria-label="Email for newsletter">
+          <button type="submit">Go</button>
+        </form>
+        <p class="nl-small">Weekly casino updates. No spam.</p>
+      </div>
+    </div>
+    <div>
+      <div class="fh">Explore</div>
+      <ul class="fl">
+        <li><a href="casinos-near-dallas.html">Casinos Near Dallas</a></li>
+        <li><a href="casinos.html">All Oklahoma Casinos</a></li>
+        <li><a href="compare-choctaw-vs-winstar.html">Compare Casinos</a></li>
+        <li><a href="#visitors">Out of State Guide</a></li>
+        <li><a href="#beginners">Beginner's Guide</a></li>
+        <li><a href="#rewards">Rewards Clubs</a></li>
+        <li><a href="#concerts">Upcoming Concerts</a></li>
+        <li><a href="sweepstakes-casinos-oklahoma.html">Play Free Online</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fh">Top Casinos</div>
+      <ul class="fl">
+        <li><a href="casino-choctaw-durant.html">Choctaw Casino Durant</a></li>
+        <li><a href="casino-winstar.html">WinStar World Casino</a></li>
+        <li><a href="casino-hard-rock-tulsa.html">Hard Rock Casino Tulsa</a></li>
+        <li><a href="casino-riverwind.html">Riverwind Casino</a></li>
+        <li><a href="casino-downstream.html">Downstream Casino Resort</a></li>
+        <li><a href="casinos.html">All Casinos →</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fh">Resources</div>
+      <ul class="fl">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="about.html#affiliate">Affiliate Disclosure</a></li>
+        <li><a href="sweepstakes-casinos-oklahoma.html">Sweepstakes Casinos</a></li>
+        <li><a href="https://www.ncpgambling.org" target="_blank" rel="noopener">Responsible Gambling</a></li>
+        <li><a href="https://www.otc.ok.gov" target="_blank" rel="noopener">Oklahoma Tribal Gaming</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <p class="fc">© 2026 OKCasinoGuide.com — Independent Oklahoma casino guide. Not affiliated with any casino or tribal nation. This site contains affiliate links and we may earn a commission at no extra cost to you when you sign up through our links. Sweepstakes casino links are for free-to-play platforms only — not real-money gambling. Always verify details directly with the casino before visiting. Gambling should be entertainment — please play responsibly. Must be 18+ (or 21+ at some properties).</p>
+    <div class="fleg">
+      <a href="privacy.html">Privacy</a>
+      <a href="about.html">Terms</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ COOKIE BANNER ══════════════ -->
+<div id="ckb" role="dialog" aria-label="Cookie consent">
+  <p class="ckt">We use cookies to improve your experience and analyze site traffic. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+  <div class="ckbtns">
+    <button class="cka" id="cka">Accept All</button>
+    <button class="ckd" id="ckd">Decline</button>
+  </div>
+</div>
+
+<!-- ══════════════ JAVASCRIPT ══════════════ -->
+<script>
+  var nav = document.getElementById('mainNav');
+  var btt = document.getElementById('btt');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    btt.classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+
+  var hbg = document.getElementById('hbg');
+  var mob = document.getElementById('mob');
+  hbg.addEventListener('click', function() {
+    var isOpen = hbg.classList.toggle('open');
+    mob.classList.toggle('open', isOpen);
+    hbg.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mob.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      hbg.classList.remove('open'); mob.classList.remove('open');
+      hbg.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (mob.classList.contains('open') && !hbg.contains(e.target) && !mob.contains(e.target)) {
+      hbg.classList.remove('open'); mob.classList.remove('open');
+      hbg.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mob.classList.contains('open')) {
+      hbg.classList.remove('open'); mob.classList.remove('open');
+      hbg.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+    }
+  });
+
+  btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  var ckb = document.getElementById('ckb');
+  try { if (localStorage.getItem('ck') !== null) ckb.classList.add('hidden'); } catch(e) {}
+  document.getElementById('cka').addEventListener('click', function() { try { localStorage.setItem('ck', '1'); } catch(e) {} ckb.classList.add('hidden'); });
+  document.getElementById('ckd').addEventListener('click', function() { try { localStorage.setItem('ck', '0'); } catch(e) {} ckb.classList.add('hidden'); });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('vis'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rv, .rv2, .rv3').forEach(function(el) { observer.observe(el); });
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.tt, .ns-scroll').forEach(function(el) { el.style.animationPlayState = 'paused'; });
+  }
+
+  // ── Trip Planner Logic ──
+  (function(){
+    var CASINO_DATA = [
+      { name:'Choctaw Casino Durant', page:'casino-choctaw-durant.html', rating:4.8, slots:true, tables:true, poker:true, golf:false, concerts:true, hotel:true, family:true, daytrip:false, budget:'mid',
+        distances:{dallas:95,fortworth:110,houston:310,sanantonio:350,okc:135,tulsa:190,wichita:220,kansascity:380,fortsmith:180,fayetteville:200} },
+      { name:'WinStar World Casino', page:'casino-winstar.html', rating:4.7, slots:true, tables:true, poker:true, golf:true, concerts:true, hotel:true, family:false, daytrip:false, budget:'high',
+        distances:{dallas:75,fortworth:95,houston:290,sanantonio:330,okc:130,tulsa:200,wichita:210,kansascity:370,fortsmith:230,fayetteville:250} },
+      { name:'Hard Rock Casino Tulsa', page:'casino-hard-rock-tulsa.html', rating:4.6, slots:true, tables:true, poker:true, golf:true, concerts:true, hotel:true, family:false, daytrip:false, budget:'mid',
+        distances:{dallas:265,fortworth:275,houston:475,sanantonio:510,okc:105,tulsa:12,wichita:190,kansascity:280,fortsmith:115,fayetteville:115} },
+      { name:'Riverwind Casino', page:'casino-riverwind.html', rating:4.5, slots:true, tables:true, poker:false, golf:false, concerts:true, hotel:false, family:false, daytrip:true, budget:'low',
+        distances:{dallas:195,fortworth:200,houston:400,sanantonio:440,okc:20,tulsa:105,wichita:165,kansascity:320,fortsmith:200,fayetteville:220} },
+      { name:'Downstream Casino Resort', page:'casino-downstream.html', rating:4.4, slots:true, tables:true, poker:false, golf:false, concerts:true, hotel:true, family:false, daytrip:false, budget:'mid',
+        distances:{dallas:360,fortworth:370,houston:560,sanantonio:600,okc:250,tulsa:100,wichita:220,kansascity:180,fortsmith:160,fayetteville:140} },
+      { name:'Cherokee Casino Roland', page:'casino-cherokee-roland.html', rating:4.2, slots:true, tables:true, poker:true, golf:false, concerts:false, hotel:false, family:false, daytrip:true, budget:'low',
+        distances:{dallas:310,fortworth:320,houston:510,sanantonio:560,okc:195,tulsa:115,wichita:300,kansascity:320,fortsmith:10,fayetteville:55} }
+    ];
+    var budgetMap = { low:['low','mid'], mid:['low','mid','high'], high:['mid','high','premium'], premium:['high','premium'] };
+
+    document.getElementById('tpFind').addEventListener('click', function(){
+      var city = document.getElementById('tpCity').value;
+      var checks = Array.from(document.querySelectorAll('.tp-checks input:checked')).map(function(i){return i.value;});
+      var budget = (document.querySelector('input[name="tpBudget"]:checked')||{}).value || '';
+      var results = CASINO_DATA.map(function(c){
+        var score = 0, total = 0;
+        if(city){ total+=3; var d=c.distances[city]||999; if(d<100) score+=3; else if(d<200) score+=2; else if(d<300) score+=1; }
+        checks.forEach(function(ck){ total+=2; if(c[ck]) score+=2; });
+        if(budget){ total+=1; if(budgetMap[budget] && budgetMap[budget].indexOf(c.budget)>=0) score+=1; }
+        return Object.assign({},c,{score:score,total:total||1,pct:Math.round((score/(total||1))*100)});
+      });
+      results.sort(function(a,b){return b.pct-a.pct;});
+      var el = document.getElementById('tpResults');
+      el.innerHTML = '';
+      if(!city && checks.length===0 && !budget){
+        el.innerHTML='<div style="text-align:center;color:var(--tdim);padding:20px;font-family:Barlow Condensed,sans-serif;font-size:14px;letter-spacing:1px;">Select at least one option above to get a recommendation.</div>';
+        return;
+      }
+      var html = '<div class="cgrid">';
+      results.slice(0,3).forEach(function(c){
+        html+='<div class="cc"><div class="match-score">'+c.pct+'% Match</div>'+
+          '<div class="cname">'+c.name+'</div>'+
+          '<div class="cloc">⭐ '+c.rating+(city?' · ~'+c.distances[city]+' miles':'')+'</div>'+
+          '<a href="'+c.page+'" class="clink">Full Guide →</a>'+
+          '<div class="cc-actions" style="margin-top:10px;">'+
+            '<a href="#affiliate-link-here" class="cc-hotel-link">🏨 Book Hotel</a>'+
+          '</div>'+
+        '</div>';
+      });
+      html+='</div>';
+      el.innerHTML=html;
+    });
+  })();
+</script>
+
+</body>
+</html>
